@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import lfilter, sawtooth
 
 image_counter = 1
+folder_path = './graphs/'
 
 def generate_white_noise(Ts, range):
     t = np.arange(0, range + Ts, Ts)
@@ -19,7 +20,7 @@ def plot_signal(t, x, title=None, histogram=False):
         plt.ylabel('Frequency')
         plt.title(title if title else 'Histogram of white noise')
         plt.grid(axis='y', alpha=0.75)
-        plt.savefig(f'./plots/{image_counter}. {title}.png')
+        plt.savefig(f'{folder_path}{image_counter}. {title}.png')
         image_counter += 1
         plt.show()
         return
@@ -29,7 +30,7 @@ def plot_signal(t, x, title=None, histogram=False):
         plt.xlabel('Time(s)')
         plt.ylabel('Function y(t)')
         plt.title(title if title else 'White noise signal')
-        plt.savefig(f'./plots/{image_counter}. {title}.png')
+        plt.savefig(f'{folder_path}{image_counter}. {title}.png')
         image_counter += 1
         plt.show()
         return
@@ -79,7 +80,7 @@ def plot_multiple_signals(m, signals, labels=None, title=None):
     if len(signals) > 1:
         plt.legend()
         
-    plt.savefig(f'./plots/{image_counter}. {title}.png')
+    plt.savefig(f'{folder_path}{image_counter}. {title}.png')
     image_counter += 1
     plt.show()
 

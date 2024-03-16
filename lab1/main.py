@@ -11,14 +11,14 @@ ts2_plot = round(limit_signal/Ts2)
 
 # 1.1
 t1, x1 = generate_white_noise(Ts1, limit_filter)
-plot_signal(t1[:ts1_plot], x1[:ts1_plot], title="White noise, step 0.01")
+plot_signal(t1[:ts1_plot * 5], x1[:ts1_plot * 5], title="White noise, step 0.01")
 
 # 1.2
 plot_signal(t1[:ts1_plot], x1[:ts1_plot], title="White noise histogram, step 0.01", histogram=True)
 
 # 1.3
 t2, x2 = generate_white_noise(Ts2, limit_filter)
-plot_signal(t2[:ts2_plot], x2[:ts2_plot], title="White noise, step 0.001")
+plot_signal(t2[:ts2_plot * 5], x2[:ts2_plot * 5], title="White noise, step 0.001")
 
 # 1.4
 plot_signal(t2[:ts2_plot], x2[:ts2_plot], title="White noise histogram, step 0.001", histogram=True)
